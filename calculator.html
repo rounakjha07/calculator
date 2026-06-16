@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #body{
+            width: 245px;
+            height: 300px;
+            border: 1px solid rgb(150, 141, 141);
+            border-radius: 5px;
+        }
+        #display{
+            width: 220px;
+            margin: 5%;
+            padding: 10px 10px;
+        }
+        #buttons{
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            flex-wrap: wrap;
+        }
+        .button{
+            width: 45px;
+            height: 30px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+        #backspace{
+            background-image: url("Screenshot\ 2026-06-16\ 211722.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 5px;
+        }
+        #main{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head> 
+<body>
+    <div id="main">
+        <div id="body">
+        <input type="text" id="display" readonly>
+        <div id="buttons">
+            <button class="button" id="" onclick="currentdisplay = '';
+            document.querySelector('#display').value = currentdisplay;">AC</button>
+            <button class="button" id="backspace" onclick="currentdisplay = currentdisplay.slice(0,-1);
+             document.querySelector('#display').value = currentdisplay;
+            "></button>
+            <button class="button" id="" onclick="currentdisplay = -(currentdisplay);
+             document.querySelector('#display').value = currentdisplay;";>+/-</button>
+            <button class="button" id="" onclick="appendValue('/')";>/</button>
+            <button class="button" id="" onclick="appendValue('7')";>7</button>
+            <button class="button" id="" onclick="appendValue('8')";>8</button>
+            <button class="button" id="" onclick="appendValue('9')";>9</button>
+            <button class="button" id="" onclick="appendValue('*')";>x</button>
+            <button class="button" id="" onclick="appendValue('4')";>4</button>
+            <button class="button" id="" onclick="appendValue('5')";>5</button>
+            <button class="button" id="" onclick="appendValue('6')";>6</button>
+            <button class="button" id="" onclick="appendValue('-')";>-</button>
+            <button class="button" id="" onclick="appendValue('1')"; >1</button>
+            <button class="button" id="" onclick="appendValue('2')";>2</button>
+            <button class="button" id="" onclick="appendValue('3')";>3</button>
+            <button class="button" id="" onclick="appendValue('+')";>+</button>
+            <button class="button" id="" onclick="appendValue('0')";>0</button>
+            <button class="button" id="" onclick="appendValue('.')";>.</button>
+            <button class="button" id="" onclick=" currentdisplay = eval(currentdisplay);
+            document.querySelector('#display').value = currentdisplay;">=</button>
+        </div>
+    </div>
+</div>
+    
+    <script>
+        function appendValue(value){
+            currentdisplay += value;
+            document.querySelector("#display").value = currentdisplay;
+        };
+        let currentdisplay = '';
+        document.querySelector("#display").value = currentdisplay;
+    </script>
+</body>
+</html>
